@@ -5,6 +5,8 @@ class Like < ApplicationRecord
   after_save :update_posts_likes_counter
   after_destroy :update_posts_likes_counter
 
+  private
+
   def update_posts_likes_counter
     post.update(likes_counter: post.likes.count)
   end
