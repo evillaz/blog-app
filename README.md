@@ -67,7 +67,7 @@ After you're finished please remove all the comments and instructions!
 <details>
   <summary>Backend</summary>
   <ul>
-    <li><a href="">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -239,6 +239,6 @@ I would like to thank microverse for the opportunity on working each other as co
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](/LICENSE.md) licensed.
+This project is [MIT](/LICENSE.MD) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
