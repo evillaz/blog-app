@@ -28,3 +28,6 @@ Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 Layout/EndOfLine:
   Enabled: false
+Metrics/BlockLength:
+  IgnoredMethods: ['describe']
+  Max: 30
