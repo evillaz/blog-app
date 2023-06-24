@@ -9,6 +9,8 @@ AllCops:
     - "node_modules/**/*"
     - "Gemfile"
     - "test/**/*"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
 
   DisplayCopNames: true
 
@@ -26,3 +28,6 @@ Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 Layout/EndOfLine:
   Enabled: false
+Metrics/BlockLength:
+  IgnoredMethods: ['describe']
+  Max: 30
