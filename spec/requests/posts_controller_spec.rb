@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'PostsController', type: :request do
   let(:user) { User.first }
-  let!(:post) { user.posts.create(title: "first post") }
+  let!(:post) { user.posts.create(title: 'first post') }
   describe 'GET /index' do
     before do
       get "/users/#{user.id}/posts"
@@ -11,7 +11,7 @@ RSpec.describe 'PostsController', type: :request do
       expect(response).to be_successful
     end
 
-    it 'renders the index template' do 
+    it 'renders the index template' do
       expect(response).to render_template(:index)
     end
 
@@ -20,7 +20,7 @@ RSpec.describe 'PostsController', type: :request do
     end
   end
 
-  describe 'GET /show' do    
+  describe 'GET /show' do
     before do
       get "/users/#{user.id}/posts/#{post.id}"
     end
@@ -28,7 +28,7 @@ RSpec.describe 'PostsController', type: :request do
       expect(response).to be_successful
     end
 
-    it 'renders the index template' do 
+    it 'renders the index template' do
       expect(response).to render_template(:show)
     end
 

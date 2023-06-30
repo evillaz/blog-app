@@ -9,7 +9,7 @@ RSpec.describe 'UsersController', type: :request do
       expect(response).to be_successful
     end
 
-    it 'renders the index template' do 
+    it 'renders the index template' do
       expect(response).to render_template(:index)
     end
 
@@ -27,7 +27,7 @@ RSpec.describe 'UsersController', type: :request do
       expect(response).to be_successful
     end
 
-    it 'renders the index template' do 
+    it 'renders the index template' do
       expect(response).to render_template(:show)
     end
 
