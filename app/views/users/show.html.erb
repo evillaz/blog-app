@@ -11,7 +11,8 @@
       <% @user.recent_posts.each do |post| %>
         <%= render 'shared/post_info', post: post%>
       <% end %>
-    <button class="button-a f"><%= link_to "See all posts ", user_posts_url(@user), class: "button primary" %></button>
+    <button class="button-a f">
+      <%= link_to "See all posts ", user_posts_url(@user), class: "button primary" %></button>
     <% else %>
       <span>This user has no posts yet</span>
     <% end %>
