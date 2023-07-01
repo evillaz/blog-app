@@ -1,0 +1,28 @@
+.form {
+  padding: 1rem 2rem;
+  margin: 1rem 2rem;
+  gap: 1rem;
+  border: solid 3px #000;
+}
+
+.inputs {
+  gap: 0.3rem;
+  font-weight: 700;
+}
+
+.inputs input, textarea {
+  padding: 0.5rem;
+  border: solid 3px #000;
+}
+
+.title-form {
+  width: 50%;
+}
+
+.text-form {
+  width: 100%;
+}
+
+.text-form textarea {
+  height: 5rem;
+}

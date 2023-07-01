@@ -12,3 +12,16 @@
 .post-full-header {
   justify-content: space-between;
 }
+
+.button-a input {
+  border: none;
+  background-color: #fff;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+}
+
+.buttons {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
