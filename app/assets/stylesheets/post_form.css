@@ -10,7 +10,8 @@
   font-weight: 700;
 }
 
-.inputs input, textarea {
+.inputs input,
+textarea {
   padding: 0.5rem;
   border: solid 3px #000;
 }
