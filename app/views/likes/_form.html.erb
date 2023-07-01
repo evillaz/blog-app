@@ -1,0 +1,5 @@
+<%= form_with model: @like, url: user_post_likes_url(user_id: params[:user_id], post_id: params[:id]), class: "button-a pagination f", method: :post, scope: :new_like, local: true do |f| %>
+  <div>
+    <%= f.submit "Like"%>
+  </div>
+<% end %>
