@@ -1,2 +1,19 @@
-<h2>User Name</h2>
-<span>Bio<span>
+<div class="user-show-container f c">
+  <div class = 'user-data f c'>
+    <%= render 'shared/user_info', user: @user%>
+    <div class = "user-bio f c">
+      <span>Bio</span>
+      <p><%= @user.bio %></p>
+    </div>
+  </div>
+  <div class="user-posts f c">
+    <% if @user.posts.present? %>
+      <% @user.recent_posts.each do |post| %>
+        <%= render 'shared/post_info', post: post%>
+      <% end %>
+    <button class="button-a f"><%= link_to "See all posts ", user_posts_url(@user), class: "button primary" %></button>
+    <% else %>
+      <span>This user has no posts yet</span>
+    <% end %>
+  </div>
+</div>
