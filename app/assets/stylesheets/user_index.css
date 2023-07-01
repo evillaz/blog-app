@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: #000;
+  font-family: sans-serif;
+}
+
+.f {
+  display: flex;
+}
+
+.c {
+  flex-direction: column;
+}
+
+.r {
+  flex-direction: row;
+}
+
+.users-list {
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+.user-info {
+  font-size: 1rem;
+  gap: 2rem;
+}
+
+.user-photo {
+  border: solid 3px #000;
+  width: 25%;
+  height: auto;
+}
+
+.user-details {
+  border: solid 3px #000;
+  margin: 0.5rem 0;
+  padding: 1rem 1rem;
+  gap: 2rem;
+  width: 75%;
+  justify-content: space-between;
+}
+
+.user-name {
+  align-self: center;
+  font-size: 2rem;
+}
+
+.posts-counter {
+  align-self: flex-end;
+  font-size: 1rem;
+}

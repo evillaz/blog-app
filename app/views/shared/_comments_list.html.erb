@@ -1,0 +1,7 @@
+<% if comments.present? %>
+  <div class="comments-container f c">
+    <% comments.each do |comment| %>
+      <span><%= comment.author.name %>: <%= comment.text %></span>
+    <% end %>
+  </div>
+<% end %>

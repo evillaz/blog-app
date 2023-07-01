@@ -1,2 +1,4 @@
-<h2>Post</h2>
-<span>Comment<span>
+<div class="post-show f c">
+  <%= render 'shared/post_show', post: @post%>
+  <%= render 'shared/comments_list', comments: @post.comments%>
+</div>
