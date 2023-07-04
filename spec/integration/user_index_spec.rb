@@ -13,25 +13,25 @@ RSpec.describe 'Users Index Page', type: :feature do
   before do
     visit users_path
   end
-  context "when viewing the Users Index Page" do
-    it 'shows all users' do
+  context "when viewing the page" do
+    it 'shows all users.' do
       users.each do |user|
         expect(page).to have_content(user.name)
       end
     end
-    it 'shows the profile picture for each user' do
+    it 'shows the profile picture for each user.' do
       users.each do |user|
         expect(page).to have_css("img[src*='#{user.photo}']")
       end
     end
-    it 'shows how many posts each user has written' do
+    it 'shows how many posts each user has written.' do
       users.each do |user|
         expect(page).to have_content(user.posts_counter)
       end
     end
   end
   context "when clicking on a user" do
-    it 'visits users show page when I click on a user' do
+    it 'visits users show page.' do
       click_on users[1].name
       expect(page).to have_current_path(user_path(users[1]))
     end
