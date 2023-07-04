@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.includes(:posts).find(params[:user_id])
-    @posts = @user.posts.includes(comments: :author)
+    @posts = @user.posts.includes(comments: :author).paginate(page: params[:page], per_page: 3)
   end
 
   def show
