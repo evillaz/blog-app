@@ -126,9 +126,12 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.15.2-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
     pg (1.5.3)
+    pg (1.5.3-x64-mingw-ucrt)
     public_suffix (5.0.1)
     puma (5.6.6)
       nio4r (~> 2.0)
@@ -195,6 +198,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -212,6 +217,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -225,11 +232,13 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.8)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
@@ -244,12 +253,14 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails (~> 6.0.0)
   selenium-webdriver
+  shoulda-matchers (~> 4.0)
   sprockets-rails
   stimulus-rails
   turbo-rails
   tzinfo-data
   web-console
   webdrivers
+  will_paginate
 
 RUBY VERSION
    ruby 3.2.2p53
