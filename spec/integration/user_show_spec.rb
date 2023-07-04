@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users Index Page', type: :feature do
+RSpec.describe 'Users Show Page', type: :feature do
   let!(:user) do
     User.create({ name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.' })
   end
@@ -13,7 +13,7 @@ RSpec.describe 'Users Index Page', type: :feature do
   before do 
     visit user_path(user)
   end
-  context "when viewing the Users Show Page" do
+  context "when viewing the page" do
     it 'shows the profile picture for user.' do
       expect(page).to have_css("img[src*='#{user.photo}']")
     end
