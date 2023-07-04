@@ -8,17 +8,17 @@ RSpec.describe 'Post Show Page', type: :feature do
     Post.create!({ author: user, title: 'Third Post', text: 'My first post' })
   end
   let!(:comments) do
-    Comment.create!([ { author: user, post: post, text: 'First comment' },
-                      { author: user, post: post, text: 'Second comment' },
-                      { author: user, post: post, text: 'Third comment' },
-                      { author: user, post: post, text: 'Fourth comment' },
-                      { author: user, post: post, text: 'Fifth comment' },
-                      { author: user, post: post, text: 'Sixth comment' }])
+    Comment.create!([{ author: user, post:, text: 'First comment' },
+                     { author: user, post:, text: 'Second comment' },
+                     { author: user, post:, text: 'Third comment' },
+                     { author: user, post:, text: 'Fourth comment' },
+                     { author: user, post:, text: 'Fifth comment' },
+                     { author: user, post:, text: 'Sixth comment' }])
   end
-  before do 
+  before do
     visit user_post_path(user, post)
   end
-  context "when viewing the page" do
+  context 'when viewing the page' do
     it 'i can see a posts title' do
       expect(page).to have_content(post.title)
     end

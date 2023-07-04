@@ -13,7 +13,7 @@ RSpec.describe 'Users Index Page', type: :feature do
   before do
     visit users_path
   end
-  context "when viewing the page" do
+  context 'when viewing the page' do
     it 'shows all users.' do
       users.each do |user|
         expect(page).to have_content(user.name)
@@ -30,7 +30,7 @@ RSpec.describe 'Users Index Page', type: :feature do
       end
     end
   end
-  context "when clicking on a user" do
+  context 'when clicking on a user' do
     it 'visits users show page.' do
       click_on users[1].name
       expect(page).to have_current_path(user_path(users[1]))

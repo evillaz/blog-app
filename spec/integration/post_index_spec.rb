@@ -11,20 +11,20 @@ RSpec.describe 'Posts Index Page', type: :feature do
                   { author: user, title: 'Fourth Post', text: 'My Fourth post' }])
   end
   let!(:comments) do
-    Comment.create!([ { author: user, post: posts[0], text: 'First comment' },
-                      { author: user, post: posts[0], text: 'Second comment' },
-                      { author: user, post: posts[0], text: 'Third comment' },
-                      { author: user, post: posts[0], text: 'Fourth comment' },
-                      { author: user, post: posts[0], text: 'Fifth comment' },
-                      { author: user, post: posts[0], text: 'Sixth comment' },
-                      { author: user, post: posts[1], text: 'First comment' },
-                      { author: user, post: posts[2], text: 'First comment' },
-                      { author: user, post: posts[3], text: 'First comment' }])
+    Comment.create!([{ author: user, post: posts[0], text: 'First comment' },
+                     { author: user, post: posts[0], text: 'Second comment' },
+                     { author: user, post: posts[0], text: 'Third comment' },
+                     { author: user, post: posts[0], text: 'Fourth comment' },
+                     { author: user, post: posts[0], text: 'Fifth comment' },
+                     { author: user, post: posts[0], text: 'Sixth comment' },
+                     { author: user, post: posts[1], text: 'First comment' },
+                     { author: user, post: posts[2], text: 'First comment' },
+                     { author: user, post: posts[3], text: 'First comment' }])
   end
-  before do 
+  before do
     visit user_posts_path(user)
   end
-  context "when viewing the page" do
+  context 'when viewing the page' do
     it 'shows the profile picture for user.' do
       expect(page).to have_css("img[src*='#{user.photo}']")
     end
@@ -55,7 +55,7 @@ RSpec.describe 'Posts Index Page', type: :feature do
       expect(page).to have_css('.pagination')
     end
   end
-  context "when clicking in the Post index Page" do
+  context 'when clicking in the Post index Page' do
     it 'redirects me to that posts show page, When I click a users post' do
       click_on posts[0].title
       expect(page).to have_current_path(user_post_path(user, posts[0]))

@@ -10,10 +10,10 @@ RSpec.describe 'Users Show Page', type: :feature do
                   { author: user, title: 'Third Post', text: 'My Third post' },
                   { author: user, title: 'Fourth Post', text: 'My Fourth post' }])
   end
-  before do 
+  before do
     visit user_path(user)
   end
-  context "when viewing the page" do
+  context 'when viewing the page' do
     it 'shows the profile picture for user.' do
       expect(page).to have_css("img[src*='#{user.photo}']")
     end
@@ -33,16 +33,16 @@ RSpec.describe 'Users Show Page', type: :feature do
       end
     end
     it 'displays a button to see all posts' do
-      expect(page).to have_button("See all posts")
+      expect(page).to have_button('See all posts')
     end
   end
-  context "when clicking in the Users Show Page" do
+  context 'when clicking in the Users Show Page' do
     it 'redirects me to that posts show page, When I click a users post' do
       click_on posts[3].title
       expect(page).to have_current_path(user_post_path(user, posts[3]))
     end
     it 'redirects me to the users posts index page, when I click to see all posts' do
-      click_button("See all posts")
+      click_button('See all posts')
       expect(page).to have_current_path(user_posts_path(user))
     end
   end
