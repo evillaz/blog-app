@@ -9,10 +9,12 @@
   <div class="user-posts f c">
     <% if @user.posts.present? %>
       <% @user.recent_posts.each do |post| %>
-        <%= render 'shared/post_info', post: post%>
+        <a class="post-container f c" href="/users/<%= @user.id %>/posts/<%= post.id %>">
+          <%= render 'shared/post_info', post: post%>
+        </a>
       <% end %>
     <button class="button-a f">
-      <%= link_to "See all posts ", user_posts_url(@user), class: "button primary" %></button>
+      <%= link_to "See all posts", user_posts_url(@user), class: "button primary" %></button>
     <% else %>
       <span>This user has no posts yet</span>
     <% end %>
