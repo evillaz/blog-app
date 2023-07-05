@@ -16,7 +16,10 @@
     <button class="button-a f">
       <%= link_to "See all posts", user_posts_url(@user), class: "button primary" %></button>
     <% else %>
-      <span>This user has no posts yet</span>
+      <article class="post-info f c">
+        <p class="post-text">This user has no posts yet</p>
+      </article>
+      <%= render 'shared/new_post', user: @user%>
     <% end %>
   </div>
 </div>

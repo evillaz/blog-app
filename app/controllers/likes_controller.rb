@@ -1,17 +1,16 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     post = Post.find(params[:post_id])
-    like = post.likes.new
+    like = Like.new
     like.author = current_user
-    respond_to do |format|
-      format.html do
-        if like.save
-          flash[:success] = 'like saved successfully'
-          redirect_to user_post_url(post.author, post)
-        else
-          flash.now[:error] = 'Error: like could not be saved'
-        end
-      end
+    like.post = post
+    if like.save
+      flash[:success] = 'like saved successfully'
+    else
+      flash.now[:error] = 'Error: like could not be saved'
     end
+    redirect_to request.referrer
   end
 end

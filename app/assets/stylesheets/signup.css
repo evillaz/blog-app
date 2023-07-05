@@ -1,0 +1,16 @@
+.signup-page {
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.signup-page .links {
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  gap: 5rem;
+  padding: 1rem 0;
+}
+
+.login-link {
+  text-decoration: underline;
+}
