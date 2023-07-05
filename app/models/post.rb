@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   after_destroy :update_users_posts_counter
 
   def recent_comments
-    comments.last(5)
+    comments.order(created_at: :desc).limit(5)
   end
 
   private
