@@ -4,7 +4,8 @@
   gap: 1rem;
 }
 
-.user-email, .user-password {
+.user-email,
+.user-password {
   display: none;
 }
 
@@ -25,7 +26,8 @@
   cursor: pointer;
 }
 
-.login-page input[type="email" i], .login-page input[type="password" i] {
+.login-page input[type="email" i],
+.login-page input[type="password" i] {
   width: 100%;
   padding: 0.2rem;
 }
