@@ -25,7 +25,12 @@
   cursor: pointer;
 }
 
-input[type="email" i], input[type="password" i] {
+.login-page input[type="email" i], .login-page input[type="password" i] {
   width: 100%;
   padding: 0.2rem;
+}
+
+.login-page .links {
+  flex-direction: column;
+  align-self: flex-start;
 }
