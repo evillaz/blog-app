@@ -14,7 +14,7 @@ RSpec.describe 'UsersController', type: :request do
     end
 
     it 'gets the correct text placeholder from the body' do
-      expect(response.body).to include('User Name')
+      expect(response.body).to include('Number of posts:')
     end
   end
 
