@@ -7,7 +7,5 @@
     </a>
   <% end %>
   <%= will_paginate @posts %>
-  <button class="button-a pagination f">
-    <a href="/users/<%= @user.id %>/posts/new">New post</a>
-  </button>
+  <%= render 'shared/new_post', user: @user%>
 <div>
