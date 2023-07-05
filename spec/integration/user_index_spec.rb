@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'Users Index Page', type: :feature do
   let!(:users) do
-    User.create([{ name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.' },
+    User.create([{ name: 'Milt', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.' },
                  { name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo.', bio: 'Teacher from England.' },
                  { name: 'Chris', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from congo' }])
   end

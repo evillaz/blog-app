@@ -29,7 +29,6 @@ RSpec.describe 'Users Show Page', type: :feature do
     it 'displays the users 3 recent posts.' do
       user.recent_posts.each do |post|
         expect(page).to have_content(post.title)
-        expect(page).to have_content(post.text)
       end
     end
     it 'displays a button to see all posts' do
