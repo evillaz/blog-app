@@ -1,60 +1,62 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  user = User.create(name: 'Eduardo')
-  subject { user.posts.create(title: 'Testing') }
-  before do
-    subject.save
+  let(:user) { User.create(name: 'Eduardo1') }
+  let!(:post) { user.posts.create(title: 'Testing') }
+  let!(:post2) { user.posts.create(title: 'Testing2') }
+  let!(:comments) do
+    Comment.create!([{ author: user, post:, text: 'First comment' },
+                     { author: user, post:, text: 'Second comment' },
+                     { author: user, post:, text: 'Third comment' },
+                     { author: user, post:, text: 'Fourth comment' },
+                     { author: user, post:, text: 'Fifth comment' },
+                     { author: user, post:, text: 'Sixth comment' }])
   end
 
   it 'title should be present' do
-    subject.title = nil
+    post.title = nil
     expect(subject).to_not be_valid
   end
 
   it 'title must not exceed 250 characters' do
-    expect(subject).to be_valid
+    expect(post).to be_valid
   end
 
   it 'comments counter should be integer value' do
-    subject.comments_counter = 'not valid'
-    expect(subject).to_not be_valid
+    post.comments_counter = 'not valid'
+    expect(post).to_not be_valid
   end
 
   it 'comments counter should be a number greater or equal to zero' do
-    subject.comments_counter = -1
-    expect(subject).to_not be_valid
+    post.comments_counter = -1
+    expect(post).to_not be_valid
   end
 
   it 'likes counter should be integer value' do
-    subject.likes_counter = 'not valid'
-    expect(subject).to_not be_valid
+    post.likes_counter = 'not valid'
+    expect(post).to_not be_valid
   end
 
   it 'likes counter should be a number greater or equal to zero' do
-    subject.likes_counter = -1
-    expect(subject).to_not be_valid
+    post.likes_counter = -1
+    expect(post).to_not be_valid
   end
 
   it 'returns the last five comments on the post' do
-    subject.comments.create
-    subject.comments.create
-    subject.comments.create
-    subject.comments.create
-    subject.comments.create
-    subject.comments.create
-    expect(subject.recent_comments.length).to eq(5)
+    expect(post.recent_comments.length).to eq(5)
   end
 
   describe 'update user posts counter method' do
     it 'should update users posts counter' do
-      expect(subject.author.posts_counter).to eq(1)
+      user.reload
+      expect(user.posts_counter).to eq(2)
     end
 
     it 'should update user posts counter on post destroy' do
-      subject.destroy
       user.reload
-      expect(user.posts_counter).to eq(0)
+      user.posts.last.destroy
+      user.reload
+      expect(user.posts_counter).to eq(1)
     end
   end
 end
