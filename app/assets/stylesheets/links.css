@@ -1,0 +1,13 @@
+.links-anchors {
+  width: max-content;
+  font-weight: 700;
+}
+
+.sign-out {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  background-color: none;
+  border: none;
+  text-decoration: underline;
+}
