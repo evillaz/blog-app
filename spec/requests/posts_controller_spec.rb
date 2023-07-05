@@ -16,7 +16,7 @@ RSpec.describe 'PostsController', type: :request do
     end
 
     it 'gets the correct text placeholder from the body' do
-      expect(response.body).to include('Post')
+      expect(response.body).to include('Comments')
     end
   end
 

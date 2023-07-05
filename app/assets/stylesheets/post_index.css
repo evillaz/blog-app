@@ -12,3 +12,13 @@
 .post-container {
   gap: 0.2rem;
 }
+
+.pagination {
+  align-self: center;
+  font-size: 1.5rem;
+}
+
+.current {
+  color: blue;
+  text-decoration: underline;
+}

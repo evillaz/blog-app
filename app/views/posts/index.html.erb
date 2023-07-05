@@ -6,6 +6,7 @@
       <%= render 'shared/comments_list', comments: post.recent_comments%>
     </a>
   <% end %>
+  <%= will_paginate @posts %>
   <button class="button-a pagination f">
     <a href="/users/<%= @user.id %>/posts/new">New post</a>
   </button>

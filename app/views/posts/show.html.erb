@@ -3,7 +3,7 @@
   <%= render 'shared/comments_list', comments: @post.comments%>
   <div class="buttons f r">
     <button class="button-a pagination f">
-      <a href="/users/<%= @user.id %>/posts/<%= @post.id %>/comments/new">New Comment</a>
+      <a href="/users/<%= @post.author_id %>/posts/<%= @post.id %>/comments/new">New Comment</a>
     </button>
     <%= render 'likes/form'%>
   </div>
