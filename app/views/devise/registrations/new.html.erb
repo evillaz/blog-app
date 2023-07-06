@@ -33,6 +33,11 @@
     </div>
 
     <div class="field f c">
+      <%= f.label :role %>
+      <%= f.select :role, options_for_select(['user', 'admin']), prompt: "Select a role", autofocus: true %>
+    </div>
+
+    <div class="field f c">
       <%= f.label :bio %>
       <%= f.text_area :bio, autofocus: true %>
     </div>
