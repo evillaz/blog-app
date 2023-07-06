@@ -5,3 +5,5 @@
   </div>
   <p><%= post.text %></p>
 </div>
+<%= render 'shared/comments_list', comments: post.comments%>
+<%= render 'shared/delete_post', user: post.author_id, post: post%>

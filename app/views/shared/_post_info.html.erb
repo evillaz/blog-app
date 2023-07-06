@@ -1,5 +1,11 @@
-<article class="post-info f c">
-  <h3 class="post-title"><%= post.title %></h3>
-  <p class="post-text"><%= post.text %></p>
-  <span class="post-counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+<article class="post-container f c">
+  <div class="post-info f c">
+    <a class="f c" href="/users/<%= post.author_id %>/posts/<%= post.id %>"> 
+      <h3 class="post-title"><%= post.title %></h3>
+      <p class="post-text"><%= post.text %></p>
+      <span class="post-counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+    </a>
+  </div>
+    <%= render 'shared/comments_list', comments: post.recent_comments%>
+    <%= render 'shared/delete_post', user: post.author_id, post: post%>
 </article>
