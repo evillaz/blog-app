@@ -1,10 +1,7 @@
 <div class="posts-index f c">
   <%= render 'shared/user_info', user: @user%>
   <% @posts.each do |post| %>
-    <a class="post-container f c" href="/users/<%= @user.id %>/posts/<%= post.id %>"> 
       <%= render 'shared/post_info', post: post%>
-      <%= render 'shared/comments_list', comments: post.recent_comments%>
-    </a>
   <% end %>
   <%= will_paginate @posts %>
   <%= render 'shared/new_post', user: @user%>

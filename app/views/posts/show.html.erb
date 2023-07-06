@@ -1,6 +1,5 @@
 <div class="post-show f c">
   <%= render 'shared/post_show', post: @post%>
-  <%= render 'shared/comments_list', comments: @post.comments%>
   <div class="buttons f r">
     <button class="button-a pagination f">
       <a href="/users/<%= @post.author_id %>/posts/<%= @post.id %>/comments/new">New Comment</a>
