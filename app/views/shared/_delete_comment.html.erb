@@ -1,0 +1,5 @@
+<% if can?(:destroy, comment) %>
+  <%= form_with(model: comment, method: :delete, data: { turbo_confirm: 'Are you sure'}, url: user_post_comment_path(user, post, comment), class: 'delete-comment delete-buttons') do |form| %>
+    <%= form.submit "Delete comment" %>
+  <% end %>
+<% end %>

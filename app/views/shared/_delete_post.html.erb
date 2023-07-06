@@ -1,0 +1,5 @@
+<% if can?(:destroy, post) %>
+  <%= form_with(model: post, method: :delete, data: { turbo_confirm: 'Are you sure'}, url: user_post_path(user, post), class: 'delete-post delete-buttons') do |form| %>
+    <%= form.submit "Delete post" %>
+  <% end %>
+<% end %>
