@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+.fixed-links {
+  position: absolute;
+  text-decoration: underline;
+}
+
+.sign-out {
+  top: 1rem;
+  right: 2rem;
+  background-color: #fff;
+  border: none;
+}
+.go-back {
+  top: 0.5rem;
+  left: 2rem;
+  background-color: #fff;
+  text-decoration: underline;
+}

@@ -1,0 +1,9 @@
+.comment-item {
+  justify-content: space-between;
+}
+
+.delete-buttons input[type="submit" i] {
+  background-color: #fff;
+  padding: 0.2rem;
+  text-decoration: underline;
+}
