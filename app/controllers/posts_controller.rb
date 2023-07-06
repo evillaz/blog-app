@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
 
   def index
     @user = User.includes(:posts).find(params[:user_id])
-    @posts = @user.posts.includes(comments: :author).paginate(page: params[:page], per_page: 3)
+    @posts = @user.posts.includes(comments: :author).order(created_at: :asc).paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -32,5 +33,17 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy 
+    @post = Post.find(params[:id])
+    if @post.comments.present?
+      @post.comments.destroy_all
+    end
+    if @post.likes.present?
+      @post.likes.destroy_all
+    end
+    @post.destroy
+    redirect_to user_posts_path(user_id: @post.author_id)
   end
 end
