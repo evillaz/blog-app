@@ -9,8 +9,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-  
-  render json: @post
+    render json: @post
   end
 
   private

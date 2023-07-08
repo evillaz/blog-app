@@ -4,7 +4,6 @@ class Api::V1::CommentsController < ApplicationController
   before_action :set_comments, only: [:index]
 
   def index
-
     render json: @comments
   end
 
