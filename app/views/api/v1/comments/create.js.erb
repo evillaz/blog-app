@@ -1,0 +1,7 @@
+<% if @comment.persisted? %>
+  // Comment creation succeeded, perform redirect here
+  <h1>Hey</h1>
+<% else %>
+  // Comment creation failed, handle the error
+  alert('Comment creation failed!');
+<% end %>

@@ -78,3 +78,7 @@ end
 gem "devise", "~> 4.9"
 
 gem "letter_opener", group: :development
+
+gem 'rack-cors', '~> 2.0', '>= 2.0.1'
+
+gem 'active_model_serializers', '~> 0.10.13'
